@@ -12,6 +12,11 @@ class GalaxyZooVGG(nn.Module):
                             nn.Conv2d(in_channels=512, out_channels=num_classes, kernel_size=1)
         )
 
+    def forward(self, x):
+        x = self.conv_layers(x)
+        x = x.view(x.size(0), -1)
+        x = self.classifier(x)
+        return x
 config = {
     'vgg11': [64, 'pool', 128, 'pool', 256, 256, 'pool', 512, 512, 'pool', 512, 512, 'pool'],
     'vgg13': [64, 64, 'pool', 128, 128, 'pool', 256, 256, 'pool', 512, 512, 'pool', 512, 512, 'pool'],
