@@ -17,7 +17,7 @@ parser.add_argument('--learning-rate', type=float, default=0.01, help='learning 
 parser.add_argument('--momentum', type=float, default=0.9, help='momentum for training.')
 parser.add_argument('--network', type=str, default='vgg11', help='CNN network to train.')
 parser.add_argument('--batch-norm', default=False, action='store_true')
-parser.add_argument('--data-path', type=str, default='~/workspace/Temporary/adi/scratch/galaxyzoo-cnn-aas2021/data/', help='Path to the galaxyzoo dataset.')
+parser.add_argument('--data-path', type=str, default='/home/idies/workspace/Temporary/adi/scratch/galaxyzoo-cnn-aas2021/data/', help='Path to the galaxyzoo dataset.')
 args = parser.parse_args()
 
 # check args values.
