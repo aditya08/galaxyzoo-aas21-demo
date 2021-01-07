@@ -33,7 +33,7 @@ print('{}\n'.format(vars(args)))
 print('{}\n'.format(vgg_network))
 print('{}\n'.format(optimizer))
 
-train_data = HDF5Dataset(args.data_path, min_pixel_dims=0, max_pixel_dims=sys.maxsize)
+train_data = HDF5Dataset(args.data_path, min_pixel_dims=0, max_pixel_dims=sys.maxsize, label_keys=['p_el', 'p_cw', 'p_acw', 'p_edge', 'p_dk', 'p_mg'])
 data_loader = data.DataLoader(train_data, batch_size = args.batch_size, shuffle=True)
 
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
